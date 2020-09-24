@@ -1,0 +1,9 @@
+C:\Valniria\Repositorio\invillia\DesafioInvillia\DesafioInvillia\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Valniria\Repositorio\invillia\DesafioInvillia\DesafioInvillia\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Valniria\Repositorio\invillia\DesafioInvillia\DesafioInvillia\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Valniria\Repositorio\invillia\DesafioInvillia\DesafioInvillia\obj\Debug\netcoreapp3.1\DesafioInvillia.csprojAssemblyReference.cache
+C:\Valniria\Repositorio\invillia\DesafioInvillia\DesafioInvillia\obj\Debug\netcoreapp3.1\DesafioInvillia.AssemblyInfoInputs.cache
+C:\Valniria\Repositorio\invillia\DesafioInvillia\DesafioInvillia\obj\Debug\netcoreapp3.1\DesafioInvillia.AssemblyInfo.cs
+C:\Valniria\Repositorio\invillia\DesafioInvillia\DesafioInvillia\obj\Debug\netcoreapp3.1\DesafioInvillia.RazorTargetAssemblyInfo.cache
+C:\Valniria\Repositorio\invillia\DesafioInvillia\DesafioInvillia\obj\Debug\netcoreapp3.1\staticwebassets\DesafioInvillia.StaticWebAssets.Manifest.cache
+C:\Valniria\Repositorio\invillia\DesafioInvillia\DesafioInvillia\obj\Debug\netcoreapp3.1\staticwebassets\DesafioInvillia.StaticWebAssets.xml
