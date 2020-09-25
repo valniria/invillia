@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "cu7QdlhNHc/7XIOppoK1jyoAKa0wfagHIritEsYUL2nS8b7Sc25sF5+42XDs52WOIowi4wZTIzrLRSPzf/Dy3w==",
+  "success": true,
+  "projectFilePath": "C:\\Valniria\\Repositorio\\invillia\\InvilliaApi\\AplicacaoService\\AplicacaoService.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\valniria.bandeira\\.nuget\\packages\\flunt\\1.0.5\\flunt.1.0.5.nupkg.sha512"
+  ],
+  "logs": []
+}
