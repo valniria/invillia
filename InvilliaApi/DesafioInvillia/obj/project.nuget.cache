@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "JZZdrQ57tBdx9uaIPxh+ADy2IqZQADO6I5m78Z0+Dxn4CE7RVzCU0DwR17SvkVqQYcWZEQhdnLVllm8tTrjf2Q==",
+  "success": true,
+  "projectFilePath": "C:\\Valniria\\Repositorio\\invillia\\InvilliaApi\\DesafioInvillia\\DesafioInvillia.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\valniria.bandeira\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512"
+  ],
+  "logs": []
+}

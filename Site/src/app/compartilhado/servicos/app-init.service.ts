@@ -22,7 +22,7 @@ export class AppInitService {
 
   public retornarConfiguracao() {
     if (!this.appConfig) {
-      throw Error('Ocorreu um erro na configuração.');
+      throw Error('Ocorreu erro na configuração do appsettings.');
     }
 
     return this.appConfig;
