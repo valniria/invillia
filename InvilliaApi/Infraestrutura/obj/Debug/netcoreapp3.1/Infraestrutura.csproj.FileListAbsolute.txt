@@ -1,0 +1,5 @@
+C:\Valniria\Repositorio\invillia\InvilliaApi\Infraestrutura\bin\Debug\netcoreapp3.1\Compartilhado.dll
+C:\Valniria\Repositorio\invillia\InvilliaApi\Infraestrutura\bin\Debug\netcoreapp3.1\Dominio.dll
+C:\Valniria\Repositorio\invillia\InvilliaApi\Infraestrutura\obj\Debug\netcoreapp3.1\Infraestrutura.csprojAssemblyReference.cache
+C:\Valniria\Repositorio\invillia\InvilliaApi\Infraestrutura\obj\Debug\netcoreapp3.1\Infraestrutura.AssemblyInfoInputs.cache
+C:\Valniria\Repositorio\invillia\InvilliaApi\Infraestrutura\obj\Debug\netcoreapp3.1\Infraestrutura.AssemblyInfo.cs
