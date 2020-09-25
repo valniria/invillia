@@ -4,4 +4,13 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Contextos\Jogos\" />
+    <Folder Include="Contextos\Usuarios\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Infraestrutura\Infraestrutura.csproj" />
+  </ItemGroup>
+
 </Project>
