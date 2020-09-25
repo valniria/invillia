@@ -15,7 +15,11 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // carregarTelaFluxoDeCaixa(){
-  //   this.router.navigate(['fluxoDeCaixa']);
-  // }
+  carregarCatalogoDeJogos(){
+    this.router.navigate(['jogos']);
+  }
+
+  carregarListagemDeUsuarios(){
+    this.router.navigate(['usuarios']);
+  }
 }

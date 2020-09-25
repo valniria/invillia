@@ -29,7 +29,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a  class="nav-link" style="cursor:pointer">
+            <a (click)="carregarCatalogoDeJogos()" class="nav-link" style="cursor:pointer">
               <i class="nav-icon fas fa-gamepad"></i>
               <p>
                 Catálogo de Jogos
@@ -37,15 +37,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a  class="nav-link" style="cursor:pointer">
-              <i class="nav-icon fas fa-user-friends"></i>
-              <p>
-                Amigos
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a  class="nav-link" style="cursor:pointer">
+            <a (click)="carregarListagemDeUsuarios()" class="nav-link" style="cursor:pointer">
               <i class="nav-icon fas fa-user"></i>
               <p>
                 Usuários

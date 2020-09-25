@@ -12,8 +12,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppInitService } from './compartilhado/servicos/app-init.service';
 import { httpInterceptorProviders } from './compartilhado/componentes/http-interceptors';
 import { JogosComponent } from './jogos/jogos.component';
-import { AmigosComponent } from './amigos/amigos.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { JogoNovoComponent } from './jogos/jogo-novo/jogos-novo.component';
+import { UsuarioNovoComponent } from './usuarios/usuario-novo/usuario-novo.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +24,9 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
     SidebarComponent,
     DashboardComponent,
     JogosComponent,
-    AmigosComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    JogoNovoComponent,
+    UsuarioNovoComponent,
   ],
   imports: [
     BrowserModule,
