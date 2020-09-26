@@ -14,8 +14,15 @@ using Aplicacao.Contextos.Jogos;
 using AplicacaoService.Contextos.Jogos;
 using Dominio.Contextos.Jogos;
 using Negocio.Contextos.Jogos;
-using Infraestrutura.Configuracao;
 using Newtonsoft.Json;
+using EntityFramework.Configuracao;
+using Aplicacao.Contextos.Usuarios;
+using Dominio.Contextos.Usuarios.Interfaces;
+using EntityFramework.Contextos.Usuarios;
+using AplicacaoService.Contextos.Usuarios;
+using Negocio.Contextos.Usuarios;
+using AplicacaoService.Contextos.Home;
+using Aplicacao.Contextos.Home;
 
 namespace DesafioInvillia
 {
@@ -66,9 +73,17 @@ namespace DesafioInvillia
             });
 
             services.AddTransient(typeof(IRepositorioBase<>), typeof(RepositorioBase<>));
+
             services.AddTransient<IJogoRepositorio, JogoRepositorio>();
+            services.AddTransient<IUsuarioRepositorio, UsuarioRepositorio>();
+
             services.AddTransient<IJogoService, JogoService>();
+            services.AddTransient<IUsuarioService, UsuarioService>();
+            services.AddTransient<IHomeService, HomeService>();
+
             services.AddTransient<IJogoNegocio, JogoNegocio>();
+            services.AddTransient<IUsuarioNegocio, UsuarioNegocio>();
+
 
 
         }

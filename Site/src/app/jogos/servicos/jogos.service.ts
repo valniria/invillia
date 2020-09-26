@@ -25,7 +25,7 @@ export class JogosService {
     const requestURL = this.variavelDeAmbiente.APIUrlBase + `jogos`;
     const parametroPost = {
       nome: formulario.nome,
-      status: formulario.status=="1"? true : false,
+      status: parseInt(formulario.status),
       tipoPlataformaId: parseInt(formulario.plataforma),
       tipoJogoId: parseInt(formulario.tipoJogo)
     };
@@ -33,6 +33,15 @@ export class JogosService {
   }
 
   obterJogo(jogoId): Observable<any> {
-    return this.httpClient.get(this.variavelDeAmbiente.APIUrlBase + `jogos/`+jogoId);
+    return this.httpClient.get(this.variavelDeAmbiente.APIUrlBase + `jogos/` + jogoId);
+  }
+
+  registrarEmprestimo(jogoId, usuarioId): Observable<any> {
+    const requestURL = this.variavelDeAmbiente.APIUrlBase + `jogos/emprestar`;
+    const parametroPost = {
+      usuarioId,
+      jogoId
+    };
+    return this.httpClient.post(requestURL, parametroPost);
   }
 }

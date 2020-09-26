@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UsuariosModel } from './modelos/usuarios.model';
+import { UsuariosService } from './servicos/usuarios.service';
 
 @Component({
   selector: 'app-usuarios',
@@ -8,14 +10,44 @@ import { UsuariosModel } from './modelos/usuarios.model';
 })
 export class UsuariosComponent implements OnInit {
   public listaDeUsuarios: Array<UsuariosModel>;
+  formularioUsuario:any;
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private servico: UsuariosService
+
+  ) { }
 
   ngOnInit(): void {
+    this.listarTodosUsuarios();
+  }
+
+  listarTodosUsuarios(){
+    debugger;
+    this.servico.listarTodosUsuarios().subscribe(
+      (res) => {
+        debugger;
+        this.listaDeUsuarios = res.data;
+        console.log('dentro');
+      },
+      (error) => {
+        console.log('erro');
+      }
+    );
   }
 
   cadastrarUsuario(){
-
+    debugger;
+    this.servico.cadastrarUsuario(this.formularioUsuario).subscribe(
+      (res) => {
+        debugger;
+        this.listaDeUsuarios = res.data;
+        console.log('dentro');
+      },
+      (error) => {
+        console.log('erro');
+      }
+    );
   }
 
   editarUsuario(){

@@ -35,7 +35,8 @@
                     <th>Ação</th>
                     <th>Nome</th>
                     <th>Quantidade De Jogos Emprestados</th>
-                    <th>Situação</th>
+                    <th>Pode ter Acesso ao Sistema</th>
+                    <th>Status</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -44,8 +45,9 @@
                         <i class="fas fa-pencil-alt" aria-hidden="true" (click)="editarUsuario(usuario.id)"></i>
                     </td>
                     <td>{{usuario.nome}}</td>
-                    <td>{{usuario.qtdeJogosEmprestados}}</td>
-                    <td>{{usuario.situacaoNome}}</td>
+                    <td>{{usuario.quantidadeJogosEmprestados}}</td>
+                    <td>{{usuario.podeTerAcessoAoSistema}}</td>
+                    <td>{{usuario.status==1?'Ativo':'Inativo'}}</td>
                   </tr>
                 </table>
               </div>

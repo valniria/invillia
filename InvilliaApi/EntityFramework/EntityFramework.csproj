@@ -5,11 +5,34 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Contextos\Usuarios\" />
+    <Compile Remove="Migrations\20200926132824_CriacaoDasTabelas.cs" />
+    <Compile Remove="Migrations\20200926132824_CriacaoDasTabelas.Designer.cs" />
+    <Compile Remove="Migrations\20200926132917_CriacaoDasTabelas.cs" />
+    <Compile Remove="Migrations\20200926132917_CriacaoDasTabelas.Designer.cs" />
+    <Compile Remove="Migrations\20200926133403_CriacaoDasTabelas.cs" />
+    <Compile Remove="Migrations\20200926133403_CriacaoDasTabelas.Designer.cs" />
+    <Compile Remove="Migrations\20200926134212_CriacaoDasTabelas.cs" />
+    <Compile Remove="Migrations\20200926134212_CriacaoDasTabelas.Designer.cs" />
+    <Compile Remove="Migrations\20200926134811_CriacaoDasTabelas.cs" />
+    <Compile Remove="Migrations\20200926134811_CriacaoDasTabelas.Designer.cs" />
+    <Compile Remove="Migrations\20200926140320_CriacaoDasTabelas.cs" />
+    <Compile Remove="Migrations\20200926140320_CriacaoDasTabelas.Designer.cs" />
+    <Compile Remove="Migrations\20200926140638_CriacaoDasTabelas.cs" />
+    <Compile Remove="Migrations\20200926140638_CriacaoDasTabelas.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Infraestrutura\Infraestrutura.csproj" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Compartilhado\Compartilhado.csproj" />
+    <ProjectReference Include="..\Dominio\Dominio.csproj" />
   </ItemGroup>
 
 </Project>

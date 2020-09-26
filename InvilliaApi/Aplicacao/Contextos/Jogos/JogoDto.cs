@@ -1,9 +1,4 @@
-﻿using Aplicacao.Contextos.Jogos;
-using Compartilhado.Enumeradores;
-using Dominio.Contextos.Jogos;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Dominio.Contextos.Jogos;
 
 namespace Aplicacao.Contextos.Jogos
 {
@@ -11,7 +6,7 @@ namespace Aplicacao.Contextos.Jogos
     {
         public long Id { get; set; }
         public string Nome { get; set; }
-        public bool Status { get; set; }
+        public short Status { get; set; }
         public long TipoJogoId { get; set; }
         public long SituacaoId { get; set; }
         public long TipoPlataformaId { get; set; }

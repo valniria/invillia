@@ -27,7 +27,6 @@
           "Aplicacao": "1.0.0",
           "AplicacaoService": "1.0.0",
           "EntityFramework": "1.0.0",
-          "Infraestrutura": "1.0.0",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "3.1.8",
           "Microsoft.EntityFrameworkCore": "3.1.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.8",
@@ -1486,26 +1485,16 @@
       },
       "EntityFramework/1.0.0": {
         "dependencies": {
-          "Infraestrutura": "1.0.0"
-        },
-        "runtime": {
-          "EntityFramework.dll": {}
-        },
-        "compile": {
-          "EntityFramework.dll": {}
-        }
-      },
-      "Infraestrutura/1.0.0": {
-        "dependencies": {
+          "Compartilhado": "1.0.0",
           "Dominio": "1.0.0",
           "Microsoft.EntityFrameworkCore": "3.1.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.8"
         },
         "runtime": {
-          "Infraestrutura.dll": {}
+          "EntityFramework.dll": {}
         },
         "compile": {
-          "Infraestrutura.dll": {}
+          "EntityFramework.dll": {}
         }
       },
       "Negocio/1.0.0": {
@@ -3912,11 +3901,6 @@
       "sha512": ""
     },
     "EntityFramework/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Infraestrutura/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

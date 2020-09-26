@@ -7,7 +7,7 @@ namespace Dominio.Contextos.Jogos
 {
     public class TipoJogo : EntidadeBase
     {
-        public string Nome { get; set; }
+        public string Descricao { get; set; }
 
         public virtual ICollection<Jogo> TipoDeJogo { get; set; }
 

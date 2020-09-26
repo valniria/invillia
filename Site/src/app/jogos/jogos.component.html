@@ -43,15 +43,19 @@
                   <tbody>
                   <tr *ngFor="let jogo of listaDeJogos">
                     <td>
-                        <i class="fas fa-pencil-alt fa-2x" aria-hidden="true" (click)="editarJogo(jogo.id)"></i>
-                        <i class="fas fa-minus-square fa-2x" aria-hidden="true" (click)="emprestarJogo(jogo.id)"></i>
-                        <i class="fas fa-plus-square fa-2x" aria-hidden="true" (click)="receberJogo(jogo.id)"></i>
+                      <i class="fas fa-pencil-alt fa-2x" aria-hidden="true" (click)="editarJogo(jogo.id)"></i>
+                        <span *ngIf="jogo.situacaoId == 1">
+                          <i class="fas fa-minus-square fa-2x" aria-hidden="true" (click)="carregarDadosDaModalDeEmprestimo(jogo.id)" data-toggle="modal" data-target="#modal-default"></i>
+                        </span>
+                        <span *ngIf="jogo.situacaoId == 2">
+                          <i class="fas fa-plus-square fa-2x" aria-hidden="true" (click)="receberJogo(jogo.id)"></i>
+                        </span>
                     </td>
                     <td>{{jogo.nome}}</td>
                     <td>{{jogo.tipoJogoNome}}</td>
                     <td>{{jogo.tipoPlataformaNome}}</td>
                     <td>{{jogo.situacaoNome}}</td>
-                    <td>{{jogo.status}}</td>
+                    <td>{{jogo.status=='1'? 'Ativo' : 'Inativo'}}</td>
                   </tr>
                 </table>
               </div>
@@ -66,4 +70,34 @@
       <!-- /.container-fluid -->
     </section>
     <!-- /.content -->
+  </div>
+
+  <div class="modal fade" id="modal-default">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Emprestar Jogo</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form role="form">
+              <div class="form-group">
+                  <label>Selecionar o Amigo que vai pegar emprestado:</label>
+                  <select class="form-control" [(ngModel)]="usuarioSelecionado.nome" [ngModelOptions]="{standalone: true}">
+                      <option value="" disabled selected>Selecione a opção</option>
+                      <option *ngFor="let usuario of listaDeUsuarios" [(value)]="usuario.id">{{usuario.nome}} ></option>
+                  </select>
+              </div>
+          </form>
+      </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Voltar</button>
+          <button type="button" class="btn btn-primary" (click)="registrarEmprestimo(this.jogoId, usuarioSelecionado.id)">Salvar</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
   </div>

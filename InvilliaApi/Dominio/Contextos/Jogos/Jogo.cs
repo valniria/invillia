@@ -1,4 +1,5 @@
 ﻿using Compartilhado.Entidades;
+using Dominio.Contextos.Usuarios;
 using System;
 
 namespace Dominio.Contextos.Jogos
@@ -6,27 +7,31 @@ namespace Dominio.Contextos.Jogos
     public class Jogo : EntidadeBase
     {
         public string Nome { get; private set; }
-        public bool Status { get; private set; }
+        public short Status { get; private set; }
         public long TipoJogoId { get; private set; }
         public long SituacaoId { get; private set; }
         public long TipoPlataformaId { get; private set; }
-        public TipoJogo TipoJogo { get; private set; }
-        public SituacaoJogo Situacao { get; private set; }
-        public TipoPlataforma TipoPlataforma { get; private set; }
+        public long UsuarioId { get; private set; }
+        public virtual TipoJogo TipoJogo { get; set; }
+        public virtual SituacaoJogo Situacao { get; set; }
+        public virtual TipoPlataforma TipoPlataforma { get; set; }
+        public virtual Usuario UsuarioQueEstaComOJogo { get; set; }
 
-        public Jogo(string nome, bool status, long tipoJogoId, long situacaoId, long tipoPlataformaId)
+
+        public Jogo(string nome, short status, long tipoJogoId, long situacaoId, long tipoPlataformaId)
         {
             Nome = nome;
             Status = status;
             TipoJogoId = tipoJogoId;
             SituacaoId = situacaoId;
             TipoPlataformaId = tipoPlataformaId;
+            UsuarioId = 1;
         }
 
-
-
-
-        //Propriedades de Navegação com Usuários
+        public void EmprestarJogo(long usuarioId)
+        {
+            UsuarioId = usuarioId;
+        }
 
 
         public override void Validar()

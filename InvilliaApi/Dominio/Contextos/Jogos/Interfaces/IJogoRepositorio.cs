@@ -10,5 +10,6 @@ namespace Dominio.Contextos.Jogos.Interfaces
     {
         Task<List<Jogo>> ListarTodosOsJogosAsync();
         Task<Jogo> ObterJogoPorIdAsync(long Id);
+        Task<int> ObterQuantidadeDeJogos();
     }
 }

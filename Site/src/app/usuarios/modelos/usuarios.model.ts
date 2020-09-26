@@ -1,8 +1,7 @@
 export class UsuariosModel {
     id: number;
     nome: string;
-    qtdeJogosEmprestados: number;
-    situacao: number;
-    situacaoNome: string;
-    temAcessoAoSistema: boolean;
+    quantidadeJogosEmprestados: number;
+    status: number;
+    podeTerAcessoAoSistema: boolean;
 }

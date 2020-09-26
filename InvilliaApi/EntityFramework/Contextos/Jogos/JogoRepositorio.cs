@@ -1,10 +1,11 @@
 ﻿using Dominio.Contextos.Jogos;
 using Dominio.Contextos.Jogos.Interfaces;
-using Infraestrutura.Configuracao;
+using EntityFramework.Configuracao;
 using Infraestrutura.Repositorio;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace EntityFramework.Contextos.Jogos
@@ -37,6 +38,14 @@ namespace EntityFramework.Contextos.Jogos
                 .FirstOrDefaultAsync(j => j.Id == Id);
 
             return jogo;
+        }
+
+        public async Task<int> ObterQuantidadeDeJogos()
+        {
+            var quantidade = await contexto.Jogos
+                                .CountAsync(j => j.Status == 1);
+
+            return quantidade;
         }
     }
 }

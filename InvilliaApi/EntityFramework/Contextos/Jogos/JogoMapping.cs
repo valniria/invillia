@@ -10,13 +10,14 @@ namespace EntityFramework.Contextos.Jogos
         {
             builder.ToTable("TB_JOGOS");
 
-            builder.HasKey(c => c.Id).IsClustered();
-            builder.Property(c => c.Id).HasColumnName("ID_JOGO");
-            builder.Property(c => c.Nome).HasColumnName("NM_JOGO").IsRequired();
-            builder.Property(c => c.Status).HasColumnName("IN_STATUS").IsRequired();
-            builder.Property(c => c.TipoJogoId).HasColumnName("IN_TIPO_JOGO").IsRequired();
-            builder.Property(c => c.SituacaoId).HasColumnName("IN_SITUACAO").IsRequired();
-            builder.Property(c => c.TipoPlataformaId).HasColumnName("IN_TIPO_PLATAFORMA").IsRequired();
+            builder.HasKey(j => j.Id).IsClustered();
+            builder.Property(j => j.Id).HasColumnName("ID_JOGO");
+            builder.Property(j => j.Nome).HasColumnName("NM_JOGO").IsRequired();
+            builder.Property(j => j.Status).HasColumnName("IN_STATUS").IsRequired();
+            builder.Property(j => j.TipoJogoId).HasColumnName("IN_TIPO_JOGO").IsRequired();
+            builder.Property(j => j.SituacaoId).HasColumnName("IN_SITUACAO").IsRequired();
+            builder.Property(j => j.TipoPlataformaId).HasColumnName("IN_TIPO_PLATAFORMA").IsRequired();
+            builder.Property(j => j.UsuarioId).HasColumnName("ID_USUARIO");
 
             builder.HasOne(j => j.TipoJogo)
                    .WithMany(j => j.TipoDeJogo)
@@ -32,6 +33,14 @@ namespace EntityFramework.Contextos.Jogos
                    .WithMany(j => j.TipoDePlataforma)
                    .HasForeignKey(j => j.TipoPlataformaId)
                    .OnDelete(DeleteBehavior.NoAction);
+
+            builder.HasOne(j => j.UsuarioQueEstaComOJogo)
+                   .WithMany(j => j.UsuarioComJogo)
+                   .HasForeignKey(j => j.UsuarioId)
+                   .OnDelete(DeleteBehavior.NoAction);
+
+
+            builder.HasIndex(j => j.UsuarioId);
         }
     }
 }

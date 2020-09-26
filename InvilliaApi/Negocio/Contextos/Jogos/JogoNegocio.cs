@@ -47,6 +47,13 @@ namespace Negocio.Contextos.Jogos
             return jogo;
         }
 
+        public async Task<int> ObterQuantidadeDeJogos()
+        {
+            var quantidade = await JogoRepositorio.ObterQuantidadeDeJogos();
+
+            return quantidade;
+        }
+
         public async Task Update(Jogo Objeto)
         {
             throw new NotImplementedException();

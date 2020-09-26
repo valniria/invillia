@@ -1,11 +1,8 @@
 ﻿using Aplicacao.Contextos.Jogos;
-using AplicacaoService.Contextos.Jogos;
 using Compartilhado.Comandos;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Mime;
 using System.Threading.Tasks;
 
@@ -36,7 +33,7 @@ namespace DesafioInvillia.Controllers.Contextos.Jogos
             }
             catch (Exception ex)
             {
-                return BadRequest(new ComandoResultado(false, "Ocorreu erro no serviço ListarTodosOsJogosAsync()"));
+                return BadRequest(new ComandoResultado(false, ex.ToString()));
             }
         }
 
@@ -55,7 +52,7 @@ namespace DesafioInvillia.Controllers.Contextos.Jogos
             catch (Exception ex)
             {
 
-                return BadRequest(new ComandoResultado(false, "Ocorreu erro no serviço ObterJogoPorIdAsync"));
+                return BadRequest(new ComandoResultado(false, ex.ToString()));
             }
         }
 
@@ -76,7 +73,7 @@ namespace DesafioInvillia.Controllers.Contextos.Jogos
             }
             catch (Exception ex)
             {
-                return BadRequest(new ComandoResultado(false, "Ocorreu erro no serviço CadastrarJogoAsync()"));
+                return BadRequest(new ComandoResultado(false, ex.ToString()));
             }
         }
 
@@ -94,7 +91,7 @@ namespace DesafioInvillia.Controllers.Contextos.Jogos
             }
             catch (Exception ex)
             {
-                return BadRequest(new ComandoResultado(false, "Ocorreu erro no serviço AtualizarJogoAsync()"));
+                return BadRequest(new ComandoResultado(false, ex.ToString()));
             }
         }
     }
