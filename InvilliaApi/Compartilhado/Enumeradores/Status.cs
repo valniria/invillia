@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Compartilhado.Enumeradores
 {
-    public enum SituacaoJogo
+    public enum Status
     {
-        Disponível = 1,
-        Emprestado = 2
+        Inativo = 0,
+        Ativo = 1
     }
 }

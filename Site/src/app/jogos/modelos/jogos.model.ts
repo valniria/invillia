@@ -1,9 +1,11 @@
 export class JogosModelo {
     id: number;
     nome: string;
-    tipo: string;
-    plataforma: number;
-    plataformaNome: string;
-    situacao: number;
+    tipoJogoId: number;
+    tipoJogoNome: string;
+    tipoPlataformaId: number;
+    tipoPlataformaNome: string;
+    situacaoId: number;
     situacaoNome: string;
+    status: string;
 }

@@ -24,11 +24,16 @@
     ".NETCoreApp,Version=v3.1": {
       "DesafioInvillia/1.0.0": {
         "dependencies": {
+          "Aplicacao": "1.0.0",
+          "AplicacaoService": "1.0.0",
+          "EntityFramework": "1.0.0",
+          "Infraestrutura": "1.0.0",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "3.1.8",
           "Microsoft.EntityFrameworkCore": "3.1.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.8",
           "Microsoft.EntityFrameworkCore.Tools": "3.1.8",
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.10.9",
+          "Negocio": "1.0.0",
           "Swashbuckle.AspNetCore": "5.6.3",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
@@ -305,6 +310,17 @@
         },
         "compile": {
           "DesafioInvillia.dll": {}
+        }
+      },
+      "Flunt/1.0.5": {
+        "runtime": {
+          "lib/netstandard2.0/Flunt.dll": {
+            "assemblyVersion": "1.0.5.0",
+            "fileVersion": "1.0.5.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Flunt.dll": {}
         }
       },
       "Microsoft.AspNetCore.JsonPatch/3.1.8": {
@@ -1422,6 +1438,86 @@
           "System.Threading": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0"
+        }
+      },
+      "Aplicacao/1.0.0": {
+        "dependencies": {
+          "Compartilhado": "1.0.0",
+          "Dominio": "1.0.0"
+        },
+        "runtime": {
+          "Aplicacao.dll": {}
+        },
+        "compile": {
+          "Aplicacao.dll": {}
+        }
+      },
+      "AplicacaoService/1.0.0": {
+        "dependencies": {
+          "Aplicacao": "1.0.0",
+          "Dominio": "1.0.0"
+        },
+        "runtime": {
+          "AplicacaoService.dll": {}
+        },
+        "compile": {
+          "AplicacaoService.dll": {}
+        }
+      },
+      "Compartilhado/1.0.0": {
+        "runtime": {
+          "Compartilhado.dll": {}
+        },
+        "compile": {
+          "Compartilhado.dll": {}
+        }
+      },
+      "Dominio/1.0.0": {
+        "dependencies": {
+          "Compartilhado": "1.0.0",
+          "Flunt": "1.0.5"
+        },
+        "runtime": {
+          "Dominio.dll": {}
+        },
+        "compile": {
+          "Dominio.dll": {}
+        }
+      },
+      "EntityFramework/1.0.0": {
+        "dependencies": {
+          "Infraestrutura": "1.0.0"
+        },
+        "runtime": {
+          "EntityFramework.dll": {}
+        },
+        "compile": {
+          "EntityFramework.dll": {}
+        }
+      },
+      "Infraestrutura/1.0.0": {
+        "dependencies": {
+          "Dominio": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "3.1.8",
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.8"
+        },
+        "runtime": {
+          "Infraestrutura.dll": {}
+        },
+        "compile": {
+          "Infraestrutura.dll": {}
+        }
+      },
+      "Negocio/1.0.0": {
+        "dependencies": {
+          "Compartilhado": "1.0.0",
+          "Dominio": "1.0.0"
+        },
+        "runtime": {
+          "Negocio.dll": {}
+        },
+        "compile": {
+          "Negocio.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -3046,6 +3142,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Flunt/1.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2p1B/LLsMf0bGwyMQK48/278OXTodXn3HyTU1v7fr/x0bNfrVSNC1Do1PxbgiOlDLChtAbtt1kPgXFqUnGAagg==",
+      "path": "flunt/1.0.5",
+      "hashPath": "flunt.1.0.5.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.JsonPatch/3.1.8": {
       "type": "package",
       "serviceable": true,
@@ -3787,6 +3890,41 @@
       "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    },
+    "Aplicacao/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AplicacaoService/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Compartilhado/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Dominio/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EntityFramework/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Infraestrutura/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Negocio/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
       "type": "referenceassembly",

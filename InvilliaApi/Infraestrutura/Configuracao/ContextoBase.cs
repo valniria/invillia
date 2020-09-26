@@ -26,7 +26,7 @@ namespace Infraestrutura.Configuracao
 
         private string GetStringConnetionConfig()
         {
-            string strCon = "Server=127.0.0.1,1433;Database=DB_JOGOS;User Id=sa;Password=myStrong(!)Password;"; //falta ainda ajustar isso.
+            string strCon = "Server=127.0.0.1,1433;Database=DB_JOGOS;User Id=sa;Password=yourStrong(!)Password;";
             return strCon;
         }
 

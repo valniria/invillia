@@ -1,0 +1,9 @@
+C:\Valniria\Repositorio\invillia\InvilliaApi\Compartilhado\bin\Debug\netcoreapp3.1\Compartilhado.deps.json
+C:\Valniria\Repositorio\invillia\InvilliaApi\Compartilhado\bin\Debug\netcoreapp3.1\Compartilhado.dll
+C:\Valniria\Repositorio\invillia\InvilliaApi\Compartilhado\bin\Debug\netcoreapp3.1\Compartilhado.pdb
+C:\Valniria\Repositorio\invillia\InvilliaApi\Compartilhado\obj\Debug\netcoreapp3.1\Compartilhado.csprojAssemblyReference.cache
+C:\Valniria\Repositorio\invillia\InvilliaApi\Compartilhado\obj\Debug\netcoreapp3.1\Compartilhado.AssemblyInfoInputs.cache
+C:\Valniria\Repositorio\invillia\InvilliaApi\Compartilhado\obj\Debug\netcoreapp3.1\Compartilhado.AssemblyInfo.cs
+C:\Valniria\Repositorio\invillia\InvilliaApi\Compartilhado\obj\Debug\netcoreapp3.1\Compartilhado.csproj.CoreCompileInputs.cache
+C:\Valniria\Repositorio\invillia\InvilliaApi\Compartilhado\obj\Debug\netcoreapp3.1\Compartilhado.dll
+C:\Valniria\Repositorio\invillia\InvilliaApi\Compartilhado\obj\Debug\netcoreapp3.1\Compartilhado.pdb

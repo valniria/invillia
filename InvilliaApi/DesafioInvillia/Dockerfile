@@ -8,6 +8,13 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
 COPY ["DesafioInvillia/DesafioInvillia.csproj", "DesafioInvillia/"]
+COPY ["AplicacaoService/AplicacaoService.csproj", "AplicacaoService/"]
+COPY ["Aplicacao/Aplicacao.csproj", "Aplicacao/"]
+COPY ["Compartilhado/Compartilhado.csproj", "Compartilhado/"]
+COPY ["Dominio/Dominio.csproj", "Dominio/"]
+COPY ["Infraestrutura/Infraestrutura.csproj", "Infraestrutura/"]
+COPY ["EntityFramework/EntityFramework.csproj", "EntityFramework/"]
+COPY ["Negocio/Negocio.csproj", "Negocio/"]
 RUN dotnet restore "DesafioInvillia/DesafioInvillia.csproj"
 COPY . .
 WORKDIR "/src/DesafioInvillia"

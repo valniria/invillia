@@ -3,3 +3,15 @@ C:\Valniria\Repositorio\invillia\InvilliaApi\Infraestrutura\bin\Debug\netcoreapp
 C:\Valniria\Repositorio\invillia\InvilliaApi\Infraestrutura\obj\Debug\netcoreapp3.1\Infraestrutura.csprojAssemblyReference.cache
 C:\Valniria\Repositorio\invillia\InvilliaApi\Infraestrutura\obj\Debug\netcoreapp3.1\Infraestrutura.AssemblyInfoInputs.cache
 C:\Valniria\Repositorio\invillia\InvilliaApi\Infraestrutura\obj\Debug\netcoreapp3.1\Infraestrutura.AssemblyInfo.cs
+C:\Valniria\Repositorio\invillia\InvilliaApi\Infraestrutura\bin\Debug\netcoreapp3.1\Infraestrutura.deps.json
+C:\Valniria\Repositorio\invillia\InvilliaApi\Infraestrutura\bin\Debug\netcoreapp3.1\Infraestrutura.runtimeconfig.json
+C:\Valniria\Repositorio\invillia\InvilliaApi\Infraestrutura\bin\Debug\netcoreapp3.1\Infraestrutura.runtimeconfig.dev.json
+C:\Valniria\Repositorio\invillia\InvilliaApi\Infraestrutura\bin\Debug\netcoreapp3.1\Infraestrutura.dll
+C:\Valniria\Repositorio\invillia\InvilliaApi\Infraestrutura\bin\Debug\netcoreapp3.1\Infraestrutura.pdb
+C:\Valniria\Repositorio\invillia\InvilliaApi\Infraestrutura\bin\Debug\netcoreapp3.1\Dominio.pdb
+C:\Valniria\Repositorio\invillia\InvilliaApi\Infraestrutura\bin\Debug\netcoreapp3.1\Compartilhado.pdb
+C:\Valniria\Repositorio\invillia\InvilliaApi\Infraestrutura\obj\Debug\netcoreapp3.1\Infraestrutura.csproj.CoreCompileInputs.cache
+C:\Valniria\Repositorio\invillia\InvilliaApi\Infraestrutura\obj\Debug\netcoreapp3.1\Infraestrutura.csproj.CopyComplete
+C:\Valniria\Repositorio\invillia\InvilliaApi\Infraestrutura\obj\Debug\netcoreapp3.1\Infraestrutura.dll
+C:\Valniria\Repositorio\invillia\InvilliaApi\Infraestrutura\obj\Debug\netcoreapp3.1\Infraestrutura.pdb
+C:\Valniria\Repositorio\invillia\InvilliaApi\Infraestrutura\obj\Debug\netcoreapp3.1\Infraestrutura.genruntimeconfig.cache

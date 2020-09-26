@@ -5,7 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Migrations\" />
+    <Compile Remove="Migrations\20200925232443_TabelaJogos.cs" />
+    <Compile Remove="Migrations\20200925232443_TabelaJogos.Designer.cs" />
+    <Compile Remove="Migrations\20200925234725_TabelaJogos.cs" />
+    <Compile Remove="Migrations\20200925234725_TabelaJogos.Designer.cs" />
+    <Compile Remove="Migrations\20200926002642_MigrationInicial.cs" />
+    <Compile Remove="Migrations\20200926002642_MigrationInicial.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

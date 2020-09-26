@@ -37,19 +37,21 @@
                     <th>Tipo</th>
                     <th>Plataforma</th>
                     <th>Situação</th>
+                    <th>Status</th>
                   </tr>
                   </thead>
                   <tbody>
                   <tr *ngFor="let jogo of listaDeJogos">
                     <td>
-                        <i class="fas fa-pencil-alt" aria-hidden="true" (click)="editarJogo(jogo.id)"></i>
-                        <i class="fas fa-pencil-alt" aria-hidden="true" (click)="emprestarJogo(jogo.id)"></i>
-                        <i class="fas fa-pencil-alt" aria-hidden="true" (click)="receberJogo(jogo.id)"></i>
+                        <i class="fas fa-pencil-alt fa-2x" aria-hidden="true" (click)="editarJogo(jogo.id)"></i>
+                        <i class="fas fa-minus-square fa-2x" aria-hidden="true" (click)="emprestarJogo(jogo.id)"></i>
+                        <i class="fas fa-plus-square fa-2x" aria-hidden="true" (click)="receberJogo(jogo.id)"></i>
                     </td>
                     <td>{{jogo.nome}}</td>
-                    <td>{{jogo.tipo}}</td>
-                    <td>{{jogo.plataformaNome}}</td>
+                    <td>{{jogo.tipoJogoNome}}</td>
+                    <td>{{jogo.tipoPlataformaNome}}</td>
                     <td>{{jogo.situacaoNome}}</td>
+                    <td>{{jogo.status}}</td>
                   </tr>
                 </table>
               </div>

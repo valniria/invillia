@@ -1,7 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Compartilhado.Interfaces;
+using Infraestrutura.Repositorio;
+using Dominio.Contextos.Jogos.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -9,8 +8,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using EntityFramework.Contextos.Jogos;
+using Aplicacao.Contextos.Jogos;
+using AplicacaoService.Contextos.Jogos;
+using Dominio.Contextos.Jogos;
+using Negocio.Contextos.Jogos;
+using Infraestrutura.Configuracao;
+using Newtonsoft.Json;
 
 namespace DesafioInvillia
 {
@@ -38,8 +43,13 @@ namespace DesafioInvillia
             });
 
             services.AddControllers();
-
+            services.AddDbContext<ContextoBase>();
             services.AddHttpClient();
+            services.AddMvc().AddNewtonsoftJson(options =>
+            {
+                options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Serialize;
+                options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+            });
 
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1",
@@ -54,6 +64,13 @@ namespace DesafioInvillia
                         }
                     });
             });
+
+            services.AddTransient(typeof(IRepositorioBase<>), typeof(RepositorioBase<>));
+            services.AddTransient<IJogoRepositorio, JogoRepositorio>();
+            services.AddTransient<IJogoService, JogoService>();
+            services.AddTransient<IJogoNegocio, JogoNegocio>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

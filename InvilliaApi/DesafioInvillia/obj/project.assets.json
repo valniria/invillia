@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "Flunt/1.0.5": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Flunt.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Flunt.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.JsonPatch/3.1.8": {
         "type": "package",
         "dependencies": {
@@ -1506,10 +1515,116 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "Aplicacao/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Compartilhado": "1.0.0",
+          "Dominio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Aplicacao.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Aplicacao.dll": {}
+        }
+      },
+      "AplicacaoService/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Aplicacao": "1.0.0",
+          "Dominio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/AplicacaoService.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AplicacaoService.dll": {}
+        }
+      },
+      "Compartilhado/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Compartilhado.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Compartilhado.dll": {}
+        }
+      },
+      "Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Compartilhado": "1.0.0",
+          "Flunt": "1.0.5"
+        },
+        "compile": {
+          "bin/placeholder/Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Dominio.dll": {}
+        }
+      },
+      "EntityFramework/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Infraestrutura": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/EntityFramework.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EntityFramework.dll": {}
+        }
+      },
+      "Infraestrutura/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Dominio": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "3.1.8",
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.8"
+        },
+        "compile": {
+          "bin/placeholder/Infraestrutura.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Infraestrutura.dll": {}
+        }
+      },
+      "Negocio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Compartilhado": "1.0.0",
+          "Dominio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Negocio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Negocio.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "Flunt/1.0.5": {
+      "sha512": "2p1B/LLsMf0bGwyMQK48/278OXTodXn3HyTU1v7fr/x0bNfrVSNC1Do1PxbgiOlDLChtAbtt1kPgXFqUnGAagg==",
+      "type": "package",
+      "path": "flunt/1.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "flunt.1.0.5.nupkg.sha512",
+        "flunt.nuspec",
+        "lib/netstandard2.0/Flunt.dll"
+      ]
+    },
     "Microsoft.AspNetCore.JsonPatch/3.1.8": {
       "sha512": "VyY44zszuKBJ/rsbcgIKu1NjRPr2CKdmQrs75yR+YaEiD8WEWnbqoxw5DO8iQBFCKb1z4Xs5Jzc5p0b41PNRmg==",
       "type": "package",
@@ -5665,15 +5780,55 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "Aplicacao/1.0.0": {
+      "type": "project",
+      "path": "../Aplicacao/Aplicacao.csproj",
+      "msbuildProject": "../Aplicacao/Aplicacao.csproj"
+    },
+    "AplicacaoService/1.0.0": {
+      "type": "project",
+      "path": "../AplicacaoService/AplicacaoService.csproj",
+      "msbuildProject": "../AplicacaoService/AplicacaoService.csproj"
+    },
+    "Compartilhado/1.0.0": {
+      "type": "project",
+      "path": "../Compartilhado/Compartilhado.csproj",
+      "msbuildProject": "../Compartilhado/Compartilhado.csproj"
+    },
+    "Dominio/1.0.0": {
+      "type": "project",
+      "path": "../Dominio/Dominio.csproj",
+      "msbuildProject": "../Dominio/Dominio.csproj"
+    },
+    "EntityFramework/1.0.0": {
+      "type": "project",
+      "path": "../EntityFramework/EntityFramework.csproj",
+      "msbuildProject": "../EntityFramework/EntityFramework.csproj"
+    },
+    "Infraestrutura/1.0.0": {
+      "type": "project",
+      "path": "../Infraestrutura/Infraestrutura.csproj",
+      "msbuildProject": "../Infraestrutura/Infraestrutura.csproj"
+    },
+    "Negocio/1.0.0": {
+      "type": "project",
+      "path": "../Negocio/Negocio.csproj",
+      "msbuildProject": "../Negocio/Negocio.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Aplicacao >= 1.0.0",
+      "AplicacaoService >= 1.0.0",
+      "EntityFramework >= 1.0.0",
+      "Infraestrutura >= 1.0.0",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 3.1.8",
       "Microsoft.EntityFrameworkCore >= 3.1.8",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.8",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.8",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.10.9",
+      "Negocio >= 1.0.0",
       "Swashbuckle.AspNetCore >= 5.6.3"
     ]
   },
@@ -5707,7 +5862,23 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Valniria\\Repositorio\\invillia\\InvilliaApi\\AplicacaoService\\AplicacaoService.csproj": {
+              "projectPath": "C:\\Valniria\\Repositorio\\invillia\\InvilliaApi\\AplicacaoService\\AplicacaoService.csproj"
+            },
+            "C:\\Valniria\\Repositorio\\invillia\\InvilliaApi\\Aplicacao\\Aplicacao.csproj": {
+              "projectPath": "C:\\Valniria\\Repositorio\\invillia\\InvilliaApi\\Aplicacao\\Aplicacao.csproj"
+            },
+            "C:\\Valniria\\Repositorio\\invillia\\InvilliaApi\\EntityFramework\\EntityFramework.csproj": {
+              "projectPath": "C:\\Valniria\\Repositorio\\invillia\\InvilliaApi\\EntityFramework\\EntityFramework.csproj"
+            },
+            "C:\\Valniria\\Repositorio\\invillia\\InvilliaApi\\Infraestrutura\\Infraestrutura.csproj": {
+              "projectPath": "C:\\Valniria\\Repositorio\\invillia\\InvilliaApi\\Infraestrutura\\Infraestrutura.csproj"
+            },
+            "C:\\Valniria\\Repositorio\\invillia\\InvilliaApi\\Negocio\\Negocio.csproj": {
+              "projectPath": "C:\\Valniria\\Repositorio\\invillia\\InvilliaApi\\Negocio\\Negocio.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

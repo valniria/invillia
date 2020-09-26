@@ -1,0 +1,14 @@
+C:\Valniria\Repositorio\invillia\InvilliaApi\Negocio\bin\Debug\netcoreapp3.1\Negocio.deps.json
+C:\Valniria\Repositorio\invillia\InvilliaApi\Negocio\bin\Debug\netcoreapp3.1\Negocio.dll
+C:\Valniria\Repositorio\invillia\InvilliaApi\Negocio\bin\Debug\netcoreapp3.1\Negocio.pdb
+C:\Valniria\Repositorio\invillia\InvilliaApi\Negocio\bin\Debug\netcoreapp3.1\Compartilhado.dll
+C:\Valniria\Repositorio\invillia\InvilliaApi\Negocio\bin\Debug\netcoreapp3.1\Dominio.dll
+C:\Valniria\Repositorio\invillia\InvilliaApi\Negocio\bin\Debug\netcoreapp3.1\Compartilhado.pdb
+C:\Valniria\Repositorio\invillia\InvilliaApi\Negocio\bin\Debug\netcoreapp3.1\Dominio.pdb
+C:\Valniria\Repositorio\invillia\InvilliaApi\Negocio\obj\Debug\netcoreapp3.1\Negocio.csprojAssemblyReference.cache
+C:\Valniria\Repositorio\invillia\InvilliaApi\Negocio\obj\Debug\netcoreapp3.1\Negocio.AssemblyInfoInputs.cache
+C:\Valniria\Repositorio\invillia\InvilliaApi\Negocio\obj\Debug\netcoreapp3.1\Negocio.AssemblyInfo.cs
+C:\Valniria\Repositorio\invillia\InvilliaApi\Negocio\obj\Debug\netcoreapp3.1\Negocio.csproj.CoreCompileInputs.cache
+C:\Valniria\Repositorio\invillia\InvilliaApi\Negocio\obj\Debug\netcoreapp3.1\Negocio.csproj.CopyComplete
+C:\Valniria\Repositorio\invillia\InvilliaApi\Negocio\obj\Debug\netcoreapp3.1\Negocio.dll
+C:\Valniria\Repositorio\invillia\InvilliaApi\Negocio\obj\Debug\netcoreapp3.1\Negocio.pdb
