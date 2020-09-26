@@ -37,6 +37,7 @@ namespace DesafioInvillia.Controllers.Contextos.Usuarios
             }
         }
 
+
         [HttpPost]
         [Consumes(MediaTypeNames.Application.Json)]
         [ProducesResponseType(StatusCodes.Status200OK)]

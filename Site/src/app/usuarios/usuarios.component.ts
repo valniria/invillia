@@ -37,17 +37,7 @@ export class UsuariosComponent implements OnInit {
   }
 
   cadastrarUsuario(){
-    debugger;
-    this.servico.cadastrarUsuario(this.formularioUsuario).subscribe(
-      (res) => {
-        debugger;
-        this.listaDeUsuarios = res.data;
-        console.log('dentro');
-      },
-      (error) => {
-        console.log('erro');
-      }
-    );
+    this.router.navigate(['usuario-novo']);
   }
 
   editarUsuario(){

@@ -30,7 +30,7 @@ export class UsuarioNovoComponent implements OnInit {
     this.servico.cadastrarUsuario(this.formularioUsuario).subscribe(
       (res) => {
         debugger;
-        this.router.navigate(['/jogos']);
+        this.router.navigate(['/usuarios']);
       },
       (error) => {
         console.log('erro');
