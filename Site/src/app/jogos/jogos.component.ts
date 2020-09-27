@@ -3,6 +3,7 @@ import { JogosModelo} from './modelos/jogos.model';
 import { Router } from '@angular/router';
 import { JogosService } from './servicos/jogos.service';
 import { UsuariosService } from '../usuarios/servicos/usuarios.service';
+import { LoadingService } from '../compartilhado/servicos/loading.service';
 
 @Component({
   selector: 'app-jogos',
@@ -21,6 +22,7 @@ export class JogosComponent implements OnInit {
   constructor(
     private router: Router,
     private servico: JogosService,
+    private loadingService: LoadingService,
     private usuarioServico: UsuariosService
     ) { }
 
@@ -29,15 +31,14 @@ export class JogosComponent implements OnInit {
   }
 
   listarJogos(){
-    debugger;
+    this.loadingService.mostrarLoading();
     this.servico.listarJogos().subscribe(
       (res) => {
-        debugger;
         this.listaDeJogos = res.data;
-        console.log('dentro');
+        this.loadingService.removerLoading();
       },
       (error) => {
-        console.log('erro');
+        this.loadingService.removerLoading();
       }
     );
   }
@@ -47,39 +48,45 @@ export class JogosComponent implements OnInit {
   }
 
   editarJogo(jogoId){
-    this.router.navigate(['/jogo-novo/'+jogoId]);
+    this.router.navigate(['/jogo-novo/' + jogoId]);
   }
 
   carregarDadosDaModalDeEmprestimo(jogoId){
-    debugger;
+    this.loadingService.mostrarLoading();
     this.jogoId = jogoId;
     this.usuarioServico.listarTodosUsuarios().subscribe(
       (res) => {
-        debugger;
         this.listaDeUsuarios = res.data;
-        console.log('dentro');
+        this.loadingService.removerLoading();
       },
       (error) => {
-        console.log('erro');
+        this.loadingService.removerLoading();
       }
     );
   }
 
   registrarEmprestimo(jogoId:number, usuarioId:number){
-    debugger;
+    this.loadingService.mostrarLoading();
     this.servico.registrarEmprestimo(jogoId, usuarioId).subscribe(
       (res) => {
-        debugger;
         this.listaDeJogos = res.data;
-        console.log('dentro');
+        this.loadingService.removerLoading();
       },
       (error) => {
-        console.log('erro');
+        this.loadingService.removerLoading();
       }
     );
   }
 
   receberJogo(){
 
+  }
+
+  excluirJogo(jogoId){
+
+  }
+
+  verDetalhes(jogoId){
+    this.router.navigate(['jogo-detalhes/'+jogoId]);
   }
 }

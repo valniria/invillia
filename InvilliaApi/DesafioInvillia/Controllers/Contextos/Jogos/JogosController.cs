@@ -58,7 +58,7 @@ namespace DesafioInvillia.Controllers.Contextos.Jogos
 
         [HttpPost]
         [Consumes(MediaTypeNames.Application.Json)]
-        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult> CadastrarJogoAsync([FromBody] JogoDto jogoDto)
         {
@@ -79,7 +79,7 @@ namespace DesafioInvillia.Controllers.Contextos.Jogos
 
         [HttpPut]
         [Consumes(MediaTypeNames.Application.Json)]
-        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult> AtualizarJogoAsync([FromBody] JogoDto jogoDto)
         {
@@ -88,6 +88,48 @@ namespace DesafioInvillia.Controllers.Contextos.Jogos
                 var jogo = (ComandoResultado)await JogoService.AtualizarJogoAsync(jogoDto);
 
                 return Ok(jogo);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ComandoResultado(false, ex.ToString()));
+            }
+        }
+
+        [HttpPut]
+        [Route("/emprestar")]
+        [Consumes(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult> EmprestarJogoAsync([FromBody] JogoDto jogoDto)
+        {
+            try
+            {
+                if (jogoDto == null)
+                    return NotFound();
+
+                var jogos = await JogoService.EmprestarJogoAsync(jogoDto);
+
+                return Ok(jogos);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ComandoResultado(false, ex.ToString()));
+            }
+        }
+
+        [HttpDelete()]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult> RemoverJogoAsync([FromBody] JogoDto jogoDto)
+        {
+            try
+            {
+                if (jogoDto == null)
+                    return NotFound();
+
+                var jogos = await JogoService.RemoverJogoAsync(jogoDto);
+
+                return Ok(jogos);
             }
             catch (Exception ex)
             {

@@ -5,6 +5,10 @@ import { JogosComponent } from './jogos/jogos.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { JogoNovoComponent } from './jogos/jogo-novo/jogos-novo.component';
 import { UsuarioNovoComponent } from './usuarios/usuario-novo/usuario-novo.component';
+import { LoginComponent } from './usuarios/login/login.component';
+import { RegistroComponent } from './usuarios/registro/registro.component';
+import { UsuarioDetalhesComponent } from './usuarios/usuario-detalhes/usuario-detalhes.component';
+import { JogoDetalhesComponent } from './jogos/jogo-detalhes/jogo-detalhes.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -14,6 +18,10 @@ const routes: Routes = [
   { path: 'jogo-novo', component: JogoNovoComponent },
   { path: 'usuarios', component: UsuariosComponent },
   { path: 'usuario-novo', component: UsuarioNovoComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'registro', component: RegistroComponent },
+  { path: 'usuario-detalhes/:usuarioId', component: UsuarioDetalhesComponent },
+  { path: 'jogo-detalhes/:jogoId', component: JogoDetalhesComponent },
 
 ];
 

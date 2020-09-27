@@ -23,11 +23,11 @@ namespace DesafioInvillia.Controllers.Contextos.Home
         [Consumes(MediaTypeNames.Application.Json)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<IComandoResultado>> ObterDadosDashboard()
+        public ActionResult<IComandoResultado> ObterDadosDashboard()
         {
             try
             {
-                var jogos = (ComandoResultado)await HomeService.ObterDadosDashboard();
+                var jogos = (ComandoResultado) HomeService.ObterDadosDashboard();
 
                 return Ok(jogos);
             }

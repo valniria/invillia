@@ -5,6 +5,6 @@ namespace Aplicacao.Contextos.Home
 {
     public interface IHomeService
     {
-        Task<IComandoResultado> ObterDadosDashboard();
+        IComandoResultado ObterDadosDashboard();
     }
 }

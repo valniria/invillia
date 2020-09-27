@@ -21,7 +21,9 @@ export class UsuariosService {
     const requestURL = this.variavelDeAmbiente.APIUrlBase + `usuarios`;
     const parametroPost = {
         nome: formulario.nome,
-        status: parseInt(formulario.status)
+        status: parseInt(formulario.status),
+        email: formulario.email,
+        senha: formulario.senha
     };
     return this.httpClient.post(requestURL, parametroPost);
     }
@@ -30,4 +32,7 @@ export class UsuariosService {
         return this.httpClient.get(this.variavelDeAmbiente.APIUrlBase + `usuarios`);
     }
 
+    obterUsuarioPorId(usuarioId): Observable<any> {
+      return this.httpClient.get(this.variavelDeAmbiente.APIUrlBase + `usuarios/` + usuarioId);
+    }
 }

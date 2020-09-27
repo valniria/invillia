@@ -35,6 +35,16 @@
                                         <option value='0'>Inativo</option>
                                     </select>
                                 </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">E-mail</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Insira seu e-mail" 
+                                    [(ngModel)]="formularioUsuario.email" [ngModelOptions]="{standalone: true}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Senha</label>
+                                    <input type="password" class="form-control" id="exampleInputEmail1" placeholder="Insira uma senha" 
+                                    [(ngModel)]="formularioUsuario.senha" [ngModelOptions]="{standalone: true}">
+                                </div>
                             </div>
                             <div class="card-footer">
                                 <!-- <div *ngIf="!jogoId"> -->

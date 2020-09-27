@@ -10,7 +10,9 @@ import { UsuariosService } from '../servicos/usuarios.service';
 export class UsuarioNovoComponent implements OnInit {
   public formularioUsuario:any = {
     nome: '',
-    status: null
+    status: null,
+    email: '',
+    senha: ''
   }
   usuarioId:number;
   constructor(

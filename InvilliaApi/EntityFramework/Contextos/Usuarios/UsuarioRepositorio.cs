@@ -26,5 +26,15 @@ namespace EntityFramework.Contextos.Usuarios
 
             return usuarios;
         }
+
+        public async Task<Usuario> ObterUsuarioPorIdAsync(long Id)
+        {
+            var usuario = await contexto.Usuarios
+                .Include(u => u.UsuarioComJogo)
+                .ThenInclude(j => j)
+                .FirstOrDefaultAsync(u => u.Id == Id);
+
+            return usuario;
+        }
     }
 }

@@ -8,19 +8,26 @@ namespace Dominio.Contextos.Usuarios
 {
     public class Usuario : EntidadeBase
     {
-        public string Nome { get; set; }
-        public int QuantidadeJogosEmprestados { get; set; }
-        public bool PodeTerAcessoAoSistema { get; set; }
-        public bool Status { get; set; }
+        public string Nome { get; private set; }
+        public string Email { get; private set; }
+        public string Senha { get; private set; }
+        public int QuantidadeJogosEmprestados { get; private set; }
+        public bool Status { get; private set; }
 
         public virtual ICollection<Jogo> UsuarioComJogo { get; set; }
 
-        public Usuario(string nome, int quantidadeJogosEmprestados, bool podeTerAcessoAoSistema, bool status)
+        public Usuario(string nome, string email, string senha, int quantidadeJogosEmprestados, bool status)
         {
             Nome = nome;
+            Email = email;
+            Senha = senha;
             QuantidadeJogosEmprestados = quantidadeJogosEmprestados;
-            PodeTerAcessoAoSistema = podeTerAcessoAoSistema;
             Status = status;
+        }
+
+        public void IncrementarQuantidadeDeEmprestimo()
+        {
+            QuantidadeJogosEmprestados++;
         }
 
         public override void Validar()

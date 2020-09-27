@@ -1,6 +1,7 @@
 ﻿using Aplicacao.Contextos.Jogos;
 using Compartilhado.Comandos;
 using Dominio.Contextos.Jogos;
+using Dominio.Contextos.Usuarios.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -10,10 +11,12 @@ namespace AplicacaoService.Contextos.Jogos
     public class JogoService : IJogoService
     {
         private readonly IJogoNegocio JogoNegocio;
+        private readonly IUsuarioNegocio UsuarioNegocio;
 
-        public JogoService(IJogoNegocio jogoNegocio)
+        public JogoService(IJogoNegocio jogoNegocio, IUsuarioNegocio usuarioNegocio)
         {
             JogoNegocio = jogoNegocio;
+            UsuarioNegocio = usuarioNegocio;
         }
 
         public async Task<IComandoResultado> AtualizarJogoAsync(JogoDto jogoDto)
@@ -24,9 +27,8 @@ namespace AplicacaoService.Contextos.Jogos
                 return new ComandoResultado(false, "Jogo não encontrado.");
             }
 
-            //Trasformar em entidade
-
-            //atualizar
+            var jogoASerAtualizado = jogoDto.TransformaEmEntidadeAtualizacao();
+            await JogoNegocio.Update(jogoASerAtualizado);
 
             return new ComandoResultado(true, "Efetuado com sucesso.");
         }
@@ -43,9 +45,44 @@ namespace AplicacaoService.Contextos.Jogos
             }
             catch (Exception ex)
             {
-                return new ComandoResultado(true, "Ocorreu um erro.");
+                return new ComandoResultado(true, ex.ToString());
             }
 
+        }
+
+        public async Task<IComandoResultado> EmprestarJogoAsync(JogoDto jogoDto)
+        {
+            try
+            {
+                var jogo = await JogoNegocio.GetById(jogoDto.Id);
+                if (jogo == null)
+                {
+                    return new ComandoResultado(false, "Jogo não encontrado.");
+                }
+
+                //Transaction
+                jogo = jogoDto.TransformaEmEntidadeAtualizacao();
+                jogo.EmprestarJogo(jogoDto.UsuarioId);
+
+                await JogoNegocio.Update(jogo);
+
+                var usuario = await UsuarioNegocio.GetById(jogoDto.UsuarioId);
+                if (usuario == null)
+                {
+                    return new ComandoResultado(false, "Usuário não encontrado.");
+                }
+
+                usuario.IncrementarQuantidadeDeEmprestimo();
+
+                await UsuarioNegocio.Update(usuario);
+
+
+                return new ComandoResultado(true, "Efetuado com sucesso.");
+            }
+            catch (Exception ex)
+            {
+                return new ComandoResultado(true, ex.ToString());
+            }
         }
 
         public async Task<IComandoResultado> GetAll()
@@ -124,6 +161,23 @@ namespace AplicacaoService.Contextos.Jogos
             };
 
             return new ComandoResultado(true, "listagem efetuada", jogoDto);
+        }
+
+        public async Task<IComandoResultado> RemoverJogoAsync(JogoDto jogoDto)
+        {
+            var jogo = await JogoNegocio.GetById(jogoDto.Id);
+            if (jogo == null)
+            {
+                return new ComandoResultado(false, "Jogo não encontrado.");
+            }
+            if (jogo.UsuarioQueEstaComOJogo != null)
+            {
+                return new ComandoResultado(false, "Jogo não pode ser excluído pois está vinculado a um usuário.");
+            }
+
+            await JogoNegocio.Delete(jogo);
+
+            return new ComandoResultado(true, "Efetuado com sucesso");
         }
     }
 }

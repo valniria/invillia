@@ -25,19 +25,35 @@ namespace Negocio.Contextos.Usuarios
             await UsuarioRepositorio.Add(Objeto);
         }
 
-        public Task<List<Usuario>> GetAll()
+        public async Task<List<Usuario>> GetAll()
         {
-            throw new NotImplementedException();
+            var usuarios = await UsuarioRepositorio.GetAll();
+
+            return usuarios;
         }
 
-        public Task<Usuario> GetById(long Id)
+        public async Task<Usuario> GetById(long Id)
         {
-            throw new NotImplementedException();
+            var usuario = await UsuarioRepositorio.GetById(Id);
+
+            return usuario;
         }
 
-        public Task Update(Usuario Objeto)
+        public async Task Update(Usuario Objeto)
         {
-            throw new NotImplementedException();
+            await UsuarioRepositorio.Update(Objeto);
+        }
+
+        public async Task<Usuario> ObterUsuarioPorIdAsync(long Id)
+        {
+            var usuario = await UsuarioRepositorio.ObterUsuarioPorIdAsync(Id);
+
+            return usuario;
+        }
+
+        public async Task Delete(Usuario Objeto)
+        {
+            await UsuarioRepositorio.Delete(Objeto);
         }
     }
 }

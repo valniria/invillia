@@ -14,5 +14,9 @@ namespace Aplicacao.Contextos.Jogos
         Task<IComandoResultado> ListarTodosOsJogosAsync();
 
         Task<IComandoResultado> ObterJogoPorIdAsync(long Id);
+
+        Task<IComandoResultado> EmprestarJogoAsync(JogoDto jogoDto);
+
+        Task<IComandoResultado> RemoverJogoAsync(JogoDto jogoDto);
     }
 }

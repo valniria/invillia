@@ -20,6 +20,11 @@ namespace Negocio.Contextos.Jogos
             await JogoRepositorio.Add(Objeto);
         }
 
+        public async Task Delete(Jogo Objeto)
+        {
+            await JogoRepositorio.Delete(Objeto);
+        }
+
         public async Task<List<Jogo>> GetAll()
         {
             var jogos = await JogoRepositorio.GetAll();
@@ -56,7 +61,7 @@ namespace Negocio.Contextos.Jogos
 
         public async Task Update(Jogo Objeto)
         {
-            throw new NotImplementedException();
+            await JogoRepositorio.Update(Objeto);
         }
     }
 }

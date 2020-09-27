@@ -5,13 +5,16 @@ import { FooterComponent } from './componentes/footer/footer.component';
 import { SidebarComponent } from './componentes/sidebar/sidebar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppInitService } from './servicos/app-init.service';
+import { LoadingComponent } from './componentes/loading/loading.component';
+import { MensagemService } from './servicos/mensagem.service';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    SidebarComponent
+    SidebarComponent,
+    LoadingComponent,
   ],
   imports: [
     CommonModule,
@@ -21,9 +24,11 @@ import { AppInitService } from './servicos/app-init.service';
   exports: [
     HeaderComponent,
     FooterComponent,
+    LoadingComponent
   ],
   providers: [
-    AppInitService
+    AppInitService,
+    MensagemService
   ]
 })
 export class CompartilhadoModule { }

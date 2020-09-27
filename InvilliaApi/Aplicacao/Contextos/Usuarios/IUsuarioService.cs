@@ -8,5 +8,11 @@ namespace Aplicacao.Contextos.Usuarios
         Task<IComandoResultado> ListarTodosOsUsuariosAsync();
 
         Task<IComandoResultado> CadastrarUsuarioAsync(UsuarioDto usuarioDto);
+        
+        Task<IComandoResultado> ObterUsuarioPorIdAsync(long Id);
+
+        Task<IComandoResultado> AtualizarUsuarioAsync(UsuarioDto usuarioDto);
+
+        Task<IComandoResultado> RemoverUsuarioAsync(UsuarioDto usuarioDto);
     }
 }

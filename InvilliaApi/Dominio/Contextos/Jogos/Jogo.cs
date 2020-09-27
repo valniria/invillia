@@ -31,6 +31,7 @@ namespace Dominio.Contextos.Jogos
         public void EmprestarJogo(long usuarioId)
         {
             UsuarioId = usuarioId;
+            SituacaoId = 2;
         }
 
 

@@ -1,4 +1,5 @@
 ﻿using Dominio.Contextos.Jogos;
+using Dominio.Contextos.Usuarios;
 
 namespace Aplicacao.Contextos.Jogos
 {
@@ -15,11 +16,26 @@ namespace Aplicacao.Contextos.Jogos
         public string TipoPlataformaNome { get; set; }
         public string SituacaoNome { get; set; }
 
+        public long UsuarioId { get; set; }
+        public string UsuarioNome { get; set; }
+        public string Email { get; set; }
+        public int QuantidadeJogosEmprestados { get; set; }
+
         public Jogo TransformaEmEntidade()
         {
             var jogo = new Jogo(Nome, Status, TipoJogoId, 1, TipoPlataformaId);
 
             return jogo;
         }
+
+        public Jogo TransformaEmEntidadeAtualizacao()
+        {
+            var jogo = new Jogo(Nome, Status, TipoJogoId, 1, TipoPlataformaId);
+            if (Id != 0)
+                jogo.InserirId(Id);
+
+            return jogo;
+        }
+
     }
 }

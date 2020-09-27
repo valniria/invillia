@@ -1,0 +1,72 @@
+<!-- Main content -->
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <!-- title row -->
+    <div class="row">
+      <div class="col-12">
+        <h4>
+          <i class="fas fa-globe"></i> {{dadosDoJogo.nome}}
+        </h4>
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- info row -->
+    <br>
+    <div class="row">
+      <div class="col-sm-3 invoice-col">
+        Tipo de Jogo
+        <address>
+          {{dadosDoJogo.tipoJogoNome}}<br>
+        </address>
+      </div>
+      <!-- /.col -->
+      <div class="col-sm-3 invoice-col">
+        Plataforma
+        <address>
+          {{dadosDoJogo.tipoPlataformaNome}}<br>
+        </address>
+      </div>
+      <div class="col-sm-3 invoice-col">
+        Situação
+        <address>
+          {{dadosDoJogo.situacaoNome}}<br>
+        </address>
+      </div>
+      <div class="col-sm-3 invoice-col">
+        Status
+        <address>
+          {{dadosDoJogo.status==1?'Ativo':'Inativo'}}<br>
+        </address>
+      </div>
+      <!-- /.col -->
+    </div>
+  </div>
+    <!-- /.row -->
+  <br>
+    <!-- Table row -->
+    <div class="row">
+      <div class="col-12 table-responsive">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>Nome do Usuário</th>
+            <th>E-mail</th>
+            <th>Quantidade de Jogos Emprestados</th>
+            <th>Status</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>{{dadosUsuario.nome}}</td>
+            <td>{{dadosUsuario.email}}</td>
+            <td>{{dadosUsuario.quantidadeJogosEmprestados}}</td>
+            <td>{{dadosUsuario.status==1?'Ativo':'Inativo'}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- /.col -->
+    </div>
+    <div class="container-fluid">
+      <button type="submit" class="btn btn-default" (click)="voltarParaListagem()">Voltar</button>
+    </div>

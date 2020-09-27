@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { JogosModelo } from '../modelos/jogos.model';
 import { Router, ActivatedRoute } from '@angular/router';
 import { JogosService } from '../servicos/jogos.service';
+import { LoadingService } from 'src/app/compartilhado/servicos/loading.service';
 
 @Component({
   selector: 'app-jogos-novo',
@@ -21,21 +22,23 @@ export class JogoNovoComponent implements OnInit {
   constructor(
     private router: Router,
     private servico: JogosService,
+    private loadingService: LoadingService,
     private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    debugger
     this.obterDadosPelaRota();
   }
 
   obterDadosPelaRota(){
+    this.loadingService.mostrarLoading();
     this.activatedRoute.params.subscribe(
       (res) => {
         this.obterJogo(res.jogoId);
+        this.loadingService.removerLoading();
       },
       (error) =>{
-        console.log('Erro no Editar Jogo');
+        this.loadingService.removerLoading();
       });
   }
 
@@ -44,27 +47,27 @@ export class JogoNovoComponent implements OnInit {
   }
 
   salvarNovoJogo(){
-    debugger;
+    this.loadingService.mostrarLoading();
     this.servico.cadastrarJogo(this.formularioJogo).subscribe(
       (res) => {
-        debugger;
+        this.loadingService.removerLoading();
         this.router.navigate(['/jogos']);
       },
       (error) => {
-        console.log('erro');
+        this.loadingService.removerLoading();
       }
     );
   }
 
   obterJogo(jogoId){
+    this.loadingService.mostrarLoading();
     this.servico.obterJogo(jogoId).subscribe(
       (res) => {
-        debugger;
         this.formularioJogo = res.data;
-        console.log('dentro');
+        this.loadingService.removerLoading();
       },
       (error) => {
-        console.log('erro');
+        this.loadingService.removerLoading();
       }
     );
   }

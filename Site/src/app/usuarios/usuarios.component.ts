@@ -40,7 +40,15 @@ export class UsuariosComponent implements OnInit {
     this.router.navigate(['usuario-novo']);
   }
 
-  editarUsuario(){
+  editarUsuario(jogoId){
+
+  }
+
+  excluirUsuario(jogoId){
+
+  }
+
+  verDetalhes(jogoId){
 
   }
 }

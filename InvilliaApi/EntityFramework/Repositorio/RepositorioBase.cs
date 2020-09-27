@@ -21,16 +21,11 @@ namespace Infraestrutura.Repositorio
 
         public async Task Add(T Objeto)
         {
-            try
-            {
-                using var data = new ContextoBase(contexto);
-                await data.AddAsync(Objeto);
-                await data.SaveChangesAsync();
-            }
-            catch (Exception ex)
-            {
-                ex.ToString();
-            }
+            using var data = new ContextoBase(contexto);
+            await data.AddAsync(Objeto);
+            await data.SaveChangesAsync();
+
+            Dispose();
         }
 
         public async Task Delete(T Objeto)
@@ -38,6 +33,8 @@ namespace Infraestrutura.Repositorio
             using var data = new ContextoBase(contexto);
             data.Set<T>().Remove(Objeto);
             await data.SaveChangesAsync();
+
+            Dispose();
         }
 
         public async Task<T> GetById(long Id)
@@ -53,6 +50,7 @@ namespace Infraestrutura.Repositorio
             return await data.Set<T>()
                              .AsNoTracking()
                              .ToListAsync();
+
         }
 
         public async Task Update(T Objeto)
@@ -60,6 +58,8 @@ namespace Infraestrutura.Repositorio
             using var data = new ContextoBase(contexto);
             data.Update(Objeto);
             await data.SaveChangesAsync();
+
+            Dispose();
         }
 
 

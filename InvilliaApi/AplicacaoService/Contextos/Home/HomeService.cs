@@ -21,12 +21,13 @@ namespace AplicacaoService.Contextos.Home
             UsuarioNegocio = usuarioNegocio;
         }
 
-        public async Task<IComandoResultado> ObterDadosDashboard()
+        public IComandoResultado ObterDadosDashboard()
         {
-            var dashboard = new HomeDto();
-
-            dashboard.QuantidadeDeJogos = JogoNegocio.ListarTodosOsJogosAsync().Result.Count();
-            dashboard.UsuariosCadastrados = UsuarioNegocio.ListarTodosOsUsuariosAsync().Result.Count();
+            var dashboard = new HomeDto
+            {
+                QuantidadeDeJogos = JogoNegocio.ListarTodosOsJogosAsync().Result.Count(),
+                UsuariosCadastrados = UsuarioNegocio.ListarTodosOsUsuariosAsync().Result.Count()
+            };
             var jogosEmprestados = JogoNegocio.ListarTodosOsJogosAsync().Result.Count(j => j.SituacaoId == 2);
 
             if (dashboard.QuantidadeDeJogos != 0 && jogosEmprestados != 0)

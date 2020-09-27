@@ -43,13 +43,15 @@
                   <tbody>
                   <tr *ngFor="let jogo of listaDeJogos">
                     <td>
-                      <i class="fas fa-pencil-alt fa-2x" aria-hidden="true" (click)="editarJogo(jogo.id)"></i>
+                      <i class="fas fa-pencil-alt" aria-hidden="true" (click)="editarJogo(jogo.id)"></i>
                         <span *ngIf="jogo.situacaoId == 1">
-                          <i class="fas fa-minus-square fa-2x" aria-hidden="true" (click)="carregarDadosDaModalDeEmprestimo(jogo.id)" data-toggle="modal" data-target="#modal-default"></i>
+                          <i class="fas fa-minus-square" aria-hidden="true" (click)="carregarDadosDaModalDeEmprestimo(jogo.id)" data-toggle="modal" data-target="#modal-default"></i>
                         </span>
                         <span *ngIf="jogo.situacaoId == 2">
-                          <i class="fas fa-plus-square fa-2x" aria-hidden="true" (click)="receberJogo(jogo.id)"></i>
+                          <i class="fas fa-plus-square" aria-hidden="true" (click)="receberJogo(jogo.id)"></i>
                         </span>
+                        <i class="fas fa-trash-alt" aria-hidden="true" (click)="excluirJogo(jogo.id)"></i>
+                        <i class="fas fa-eye" aria-hidden="true" (click)="verDetalhes(jogo.id)"></i>
                     </td>
                     <td>{{jogo.nome}}</td>
                     <td>{{jogo.tipoJogoNome}}</td>

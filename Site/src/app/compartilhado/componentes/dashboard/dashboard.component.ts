@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoadingService } from '../../servicos/loading.service';
 import { DashboardService } from './dashboard.service';
 
 @Component({
@@ -8,11 +9,12 @@ import { DashboardService } from './dashboard.service';
 })
 export class DashboardComponent implements OnInit {
   dadosDashboard:any = {
-    quantidadeDeJogos: 10,
-    porcentagemDeEmprestimo: 22,
-    usuariosCadastrados: 2
+    quantidadeDeJogos: 0,
+    porcentagemDeEmprestimo: 0,
+    usuariosCadastrados: 0
   }
   constructor(
+    private loadingService: LoadingService,
     private servico: DashboardService
     ) { }
 
@@ -21,15 +23,14 @@ export class DashboardComponent implements OnInit {
   }
 
   carregarDashboard(){
-    debugger;
+    this.loadingService.mostrarLoading();
     this.servico.carregarDashboard().subscribe(
       (res) => {
-        debugger;
         this.dadosDashboard = res.data;
-        console.log('dentro');
+        this.loadingService.removerLoading();
       },
       (error) => {
-        console.log('erro');
+        this.loadingService.removerLoading();
       }
     );
   }

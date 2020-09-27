@@ -3,5 +3,6 @@ export class UsuariosModel {
     nome: string;
     quantidadeJogosEmprestados: number;
     status: number;
-    podeTerAcessoAoSistema: boolean;
+    email: string;
+    senha: string;
 }
