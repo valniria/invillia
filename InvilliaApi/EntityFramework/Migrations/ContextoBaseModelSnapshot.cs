@@ -130,22 +130,37 @@ namespace EntityFramework.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnName("NM_EMAIL")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnName("NM_NOME")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("PodeTerAcessoAoSistema")
-                        .HasColumnName("IN_PODE_TER_ACESSO")
-                        .HasColumnType("bit");
-
                     b.Property<int>("QuantidadeJogosEmprestados")
                         .HasColumnName("IN_QTDE_JOGOS_EMPRESTADOS")
                         .HasColumnType("int");
 
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnName("NM_ROLE")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Senha")
+                        .IsRequired()
+                        .HasColumnName("NM_SENHA")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("Status")
                         .HasColumnName("IN_STATUS")
                         .HasColumnType("bit");
+
+                    b.Property<int>("TipoDeUsuario")
+                        .HasColumnName("IN_TIPO_USUARIO")
+                        .HasColumnType("int");
 
                     b.HasKey("Id")
                         .HasAnnotation("SqlServer:Clustered", true);

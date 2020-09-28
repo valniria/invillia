@@ -19,6 +19,10 @@
     <Compile Remove="Migrations\20200926140320_CriacaoDasTabelas.Designer.cs" />
     <Compile Remove="Migrations\20200926140638_CriacaoDasTabelas.cs" />
     <Compile Remove="Migrations\20200926140638_CriacaoDasTabelas.Designer.cs" />
+    <Compile Remove="Migrations\20200926141318_CriacaoDasTabelas.cs" />
+    <Compile Remove="Migrations\20200926141318_CriacaoDasTabelas.Designer.cs" />
+    <Compile Remove="Migrations\20200928132353_CriandoTabelas.cs" />
+    <Compile Remove="Migrations\20200928132353_CriandoTabelas.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

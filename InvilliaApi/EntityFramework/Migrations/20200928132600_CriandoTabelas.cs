@@ -2,7 +2,7 @@
 
 namespace EntityFramework.Migrations
 {
-    public partial class CriacaoDasTabelas : Migration
+    public partial class CriandoTabelas : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -55,9 +55,12 @@ namespace EntityFramework.Migrations
                     ID_USUARIO = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     NM_NOME = table.Column<string>(nullable: false),
+                    NM_EMAIL = table.Column<string>(nullable: false),
+                    NM_SENHA = table.Column<string>(nullable: false),
                     IN_QTDE_JOGOS_EMPRESTADOS = table.Column<int>(nullable: false),
-                    IN_PODE_TER_ACESSO = table.Column<bool>(nullable: false),
-                    IN_STATUS = table.Column<bool>(nullable: false)
+                    IN_STATUS = table.Column<bool>(nullable: false),
+                    NM_ROLE = table.Column<string>(nullable: false),
+                    IN_TIPO_USUARIO = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
