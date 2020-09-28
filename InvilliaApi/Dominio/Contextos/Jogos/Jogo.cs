@@ -34,6 +34,11 @@ namespace Dominio.Contextos.Jogos
             SituacaoId = 2;
         }
 
+        public void DevolverJogo()
+        {
+            UsuarioId = 1; //Admin
+            SituacaoId = 1;
+        }
 
         public override void Validar()
         {

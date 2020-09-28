@@ -36,12 +36,17 @@ export class JogosService {
     return this.httpClient.get(this.variavelDeAmbiente.APIUrlBase + `jogos/` + jogoId);
   }
 
-  registrarEmprestimo(jogoId, usuarioId): Observable<any> {
-    const requestURL = this.variavelDeAmbiente.APIUrlBase + `jogos/emprestar`;
-    const parametroPost = {
+  registrarEmprestimoOuDevolucao(jogoId, usuarioId, acao): Observable<any> {
+    const requestURL = this.variavelDeAmbiente.APIUrlBase + `jogos/emprestarOuReceber`;
+    const parametroPut = {
       usuarioId,
-      jogoId
+      id: jogoId,
+      acao
     };
-    return this.httpClient.post(requestURL, parametroPost);
+    return this.httpClient.put(requestURL, parametroPut);
+  }
+
+  removerJogo(jogoId): Observable<any> {    
+      return this.httpClient.delete(this.variavelDeAmbiente.APIUrlBase + `jogos/` + jogoId);
   }
 }

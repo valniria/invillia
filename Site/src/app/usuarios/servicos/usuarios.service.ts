@@ -23,7 +23,8 @@ export class UsuariosService {
         nome: formulario.nome,
         status: parseInt(formulario.status),
         email: formulario.email,
-        senha: formulario.senha
+        senha: formulario.senha,
+        tipoDeUsuario: formulario.tipoDeUsuario
     };
     return this.httpClient.post(requestURL, parametroPost);
     }

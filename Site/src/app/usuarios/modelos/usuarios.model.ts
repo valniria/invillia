@@ -5,4 +5,5 @@ export class UsuariosModel {
     status: number;
     email: string;
     senha: string;
+    tipoDeUsuario: number;
 }

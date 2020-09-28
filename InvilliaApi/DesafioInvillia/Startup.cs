@@ -23,6 +23,10 @@ using AplicacaoService.Contextos.Usuarios;
 using Negocio.Contextos.Usuarios;
 using AplicacaoService.Contextos.Home;
 using Aplicacao.Contextos.Home;
+using System.Text;
+using Compartilhado.Configuracoes;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 namespace DesafioInvillia
 {
@@ -50,6 +54,27 @@ namespace DesafioInvillia
             });
 
             services.AddControllers();
+
+            //Autenticacao JWT
+            var key = Encoding.ASCII.GetBytes(Autenticacao.Segredo);
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+                .AddJwtBearer(x =>
+                {
+                    x.RequireHttpsMetadata = false;
+                    x.SaveToken = true;
+                    x.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(key),
+                        ValidateIssuer = false,
+                        ValidateAudience = false
+                    };
+                });
+
             services.AddDbContext<ContextoBase>();
             services.AddHttpClient();
             services.AddMvc().AddNewtonsoftJson(options =>
@@ -102,6 +127,7 @@ namespace DesafioInvillia
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

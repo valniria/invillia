@@ -36,6 +36,7 @@
                     <th>Nome</th>
                     <th>E-mail</th>
                     <th>Quantidade De Jogos Emprestados</th>
+                    <th>Tipo de Usuário</th>
                     <th>Status</th>
                   </tr>
                   </thead>
@@ -49,6 +50,7 @@
                     <td>{{usuario.nome}}</td>
                     <td>{{usuario.email}}</td>
                     <td>{{usuario.quantidadeJogosEmprestados}}</td>
+                    <td>{{usuario.tipoDeUsuario==1?'Admin':'Comun'}}</td>
                     <td>{{usuario.status==1?'Ativo':'Inativo'}}</td>
                   </tr>
                 </table>

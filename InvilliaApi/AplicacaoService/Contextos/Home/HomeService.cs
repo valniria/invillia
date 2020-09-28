@@ -2,11 +2,7 @@
 using Compartilhado.Comandos;
 using Dominio.Contextos.Jogos;
 using Dominio.Contextos.Usuarios.Interfaces;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AplicacaoService.Contextos.Home
 {
@@ -26,7 +22,7 @@ namespace AplicacaoService.Contextos.Home
             var dashboard = new HomeDto
             {
                 QuantidadeDeJogos = JogoNegocio.ListarTodosOsJogosAsync().Result.Count(),
-                UsuariosCadastrados = UsuarioNegocio.ListarTodosOsUsuariosAsync().Result.Count()
+                UsuariosCadastrados = UsuarioNegocio.ListarTodosOsUsuariosAsync().Result.Count(u => u.Status.Equals(1))
             };
             var jogosEmprestados = JogoNegocio.ListarTodosOsJogosAsync().Result.Count(j => j.SituacaoId == 2);
 

@@ -1,5 +1,6 @@
 ﻿using Aplicacao.Contextos.Jogos;
 using Compartilhado.Comandos;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -96,10 +97,11 @@ namespace DesafioInvillia.Controllers.Contextos.Jogos
         }
 
         [HttpPut]
-        [Route("/emprestar")]
+        [Route("emprestarOuReceber")]
         [Consumes(MediaTypeNames.Application.Json)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult> EmprestarJogoAsync([FromBody] JogoDto jogoDto)
         {
             try
@@ -117,17 +119,17 @@ namespace DesafioInvillia.Controllers.Contextos.Jogos
             }
         }
 
-        [HttpDelete()]
+        [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult> RemoverJogoAsync([FromBody] JogoDto jogoDto)
+        public async Task<ActionResult> RemoverJogoAsync(int Id)
         {
             try
             {
-                if (jogoDto == null)
+                if (Id == 0)
                     return NotFound();
 
-                var jogos = await JogoService.RemoverJogoAsync(jogoDto);
+                var jogos = await JogoService.RemoverJogoAsync(Id);
 
                 return Ok(jogos);
             }

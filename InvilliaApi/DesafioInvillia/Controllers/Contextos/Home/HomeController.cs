@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Net.Mime;
-using System.Threading.Tasks;
 
 namespace DesafioInvillia.Controllers.Contextos.Home
 {
@@ -36,5 +35,6 @@ namespace DesafioInvillia.Controllers.Contextos.Home
                 return BadRequest(new ComandoResultado(false, ex.ToString()));
             }
         }
+
     }
 }

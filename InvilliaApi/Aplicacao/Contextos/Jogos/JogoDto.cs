@@ -20,6 +20,7 @@ namespace Aplicacao.Contextos.Jogos
         public string UsuarioNome { get; set; }
         public string Email { get; set; }
         public int QuantidadeJogosEmprestados { get; set; }
+        public string Acao { get; set; }
 
         public Jogo TransformaEmEntidade()
         {

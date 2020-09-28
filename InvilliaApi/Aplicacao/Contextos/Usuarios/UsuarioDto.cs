@@ -12,10 +12,11 @@ namespace Aplicacao.Contextos.Usuarios
         public string Email { get; set; }
         public string Senha { get; set; }
         public bool Status { get; set; }
+        public int TipoDeUsuario { get; set; }
 
         public Usuario TransformaEmEntidade()
         {
-            var usuario = new Usuario(Nome, Email, Senha, QuantidadeJogosEmprestados, Status);
+            var usuario = new Usuario(Nome, Email, Senha, QuantidadeJogosEmprestados, Status, TipoDeUsuario);
             if(Id != 0)
             {
                 usuario.InserirId(Id);

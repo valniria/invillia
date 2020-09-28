@@ -1,5 +1,6 @@
 ﻿using Aplicacao.Contextos.Usuarios;
 using Compartilhado.Comandos;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -23,6 +24,7 @@ namespace DesafioInvillia.Controllers.Contextos.Usuarios
         [Consumes(MediaTypeNames.Application.Json)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Authorize(Roles ="Admin")]
         public async Task<ActionResult<IComandoResultado>> ListarTodosOsUsuariosAsync()
         {
             try
@@ -110,6 +112,29 @@ namespace DesafioInvillia.Controllers.Contextos.Usuarios
                     return NotFound();
 
                 var jogos = await UsuarioService.RemoverUsuarioAsync(usuarioDto);
+
+                return Ok(jogos);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ComandoResultado(false, ex.ToString()));
+            }
+        }
+
+        [HttpPost]
+        [Route("login")]
+        [AllowAnonymous]
+        [Consumes(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult> RealizarLoginAsync([FromBody] UsuarioDto usuarioDto)
+        {
+            try
+            {
+                if (usuarioDto == null)
+                    return NotFound();
+
+                var jogos = await UsuarioService.RealizarLoginAsync(usuarioDto);
 
                 return Ok(jogos);
             }

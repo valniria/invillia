@@ -21,6 +21,7 @@ import { UsuarioDetalhesComponent } from './usuarios/usuario-detalhes/usuario-de
 import { JogoDetalhesComponent } from './jogos/jogo-detalhes/jogo-detalhes.component';
 import { LoadingComponent } from './compartilhado/componentes/loading/loading.component';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { MensagemComponent } from './compartilhado/componentes/mensagem/mensagem.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     UsuarioDetalhesComponent,
     JogoDetalhesComponent,
     LoadingComponent,
+    MensagemComponent,
   ],
   imports: [
     BrowserModule,

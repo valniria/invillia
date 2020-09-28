@@ -55,5 +55,12 @@ namespace Negocio.Contextos.Usuarios
         {
             await UsuarioRepositorio.Delete(Objeto);
         }
+
+        public async Task<Usuario> BuscaPorEmailESenhaAsync(string email, string senha)
+        {
+            var usuario = await UsuarioRepositorio.BuscaPorEmailESenhaAsync(email, senha);
+
+            return usuario;
+        }
     }
 }

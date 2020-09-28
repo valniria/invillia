@@ -60,19 +60,27 @@ namespace AplicacaoService.Contextos.Jogos
                     return new ComandoResultado(false, "Jogo não encontrado.");
                 }
 
-                //Transaction
-                jogo = jogoDto.TransformaEmEntidadeAtualizacao();
-                jogo.EmprestarJogo(jogoDto.UsuarioId);
+                var usuario = await UsuarioNegocio.GetById(jogoDto.UsuarioId);
 
+                if(jogoDto.Acao == "devolver")
+                {
+                    usuario.DecrementarQuantidadeDeEmprestimo();
+                    jogo.DevolverJogo();
+                }
+                else
+                {
+                    usuario.IncrementarQuantidadeDeEmprestimo();
+                    jogo.EmprestarJogo(jogoDto.UsuarioId);
+                }
+
+                //Transaction
+                
                 await JogoNegocio.Update(jogo);
 
-                var usuario = await UsuarioNegocio.GetById(jogoDto.UsuarioId);
                 if (usuario == null)
                 {
                     return new ComandoResultado(false, "Usuário não encontrado.");
                 }
-
-                usuario.IncrementarQuantidadeDeEmprestimo();
 
                 await UsuarioNegocio.Update(usuario);
 
@@ -163,14 +171,14 @@ namespace AplicacaoService.Contextos.Jogos
             return new ComandoResultado(true, "listagem efetuada", jogoDto);
         }
 
-        public async Task<IComandoResultado> RemoverJogoAsync(JogoDto jogoDto)
+        public async Task<IComandoResultado> RemoverJogoAsync(long Id)
         {
-            var jogo = await JogoNegocio.GetById(jogoDto.Id);
+            var jogo = await JogoNegocio.ObterJogoPorIdAsync(Id);
             if (jogo == null)
             {
                 return new ComandoResultado(false, "Jogo não encontrado.");
             }
-            if (jogo.UsuarioQueEstaComOJogo != null)
+            if (jogo.SituacaoId == 2)
             {
                 return new ComandoResultado(false, "Jogo não pode ser excluído pois está vinculado a um usuário.");
             }

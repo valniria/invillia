@@ -14,5 +14,7 @@ namespace Aplicacao.Contextos.Usuarios
         Task<IComandoResultado> AtualizarUsuarioAsync(UsuarioDto usuarioDto);
 
         Task<IComandoResultado> RemoverUsuarioAsync(UsuarioDto usuarioDto);
+
+        Task<IComandoResultado> RealizarLoginAsync(UsuarioDto usuarioDto);
     }
 }

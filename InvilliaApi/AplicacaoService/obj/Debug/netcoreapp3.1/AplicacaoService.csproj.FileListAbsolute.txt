@@ -10,7 +10,7 @@ C:\Valniria\Repositorio\invillia\InvilliaApi\AplicacaoService\bin\Debug\netcorea
 C:\Valniria\Repositorio\invillia\InvilliaApi\AplicacaoService\obj\Debug\netcoreapp3.1\AplicacaoService.csprojAssemblyReference.cache
 C:\Valniria\Repositorio\invillia\InvilliaApi\AplicacaoService\obj\Debug\netcoreapp3.1\AplicacaoService.AssemblyInfoInputs.cache
 C:\Valniria\Repositorio\invillia\InvilliaApi\AplicacaoService\obj\Debug\netcoreapp3.1\AplicacaoService.AssemblyInfo.cs
-C:\Valniria\Repositorio\invillia\InvilliaApi\AplicacaoService\obj\Debug\netcoreapp3.1\AplicacaoService.csproj.CoreCompileInputs.cache
 C:\Valniria\Repositorio\invillia\InvilliaApi\AplicacaoService\obj\Debug\netcoreapp3.1\AplicacaoService.csproj.CopyComplete
 C:\Valniria\Repositorio\invillia\InvilliaApi\AplicacaoService\obj\Debug\netcoreapp3.1\AplicacaoService.dll
 C:\Valniria\Repositorio\invillia\InvilliaApi\AplicacaoService\obj\Debug\netcoreapp3.1\AplicacaoService.pdb
+C:\Valniria\Repositorio\invillia\InvilliaApi\AplicacaoService\obj\Debug\netcoreapp3.1\AplicacaoService.csproj.CoreCompileInputs.cache

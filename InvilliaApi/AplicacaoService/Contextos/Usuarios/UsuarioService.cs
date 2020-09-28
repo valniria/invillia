@@ -35,6 +35,7 @@ namespace AplicacaoService.Contextos.Usuarios
             try
             {
                 usuarioDto.PrepararSenha();
+                usuarioDto.Email = usuarioDto.Email.ToLower();
 
                 var usuario = usuarioDto.TransformaEmEntidade();
 
@@ -62,6 +63,26 @@ namespace AplicacaoService.Contextos.Usuarios
             return new ComandoResultado(true, "listagem efetuada", usuario);
         }
 
+        public async Task<IComandoResultado> RealizarLoginAsync(UsuarioDto usuarioDto)
+        {
+            usuarioDto.PrepararSenha();
+            usuarioDto.Email = usuarioDto.Email.ToLower();
+
+            var usuario = await UsuarioNegocio.BuscaPorEmailESenhaAsync(usuarioDto.Email, usuarioDto.Senha);
+
+            if(usuario == null)
+            {
+                return new ComandoResultado(false, "Usuário ou Senha Inválidos.");
+            }
+
+            //Gera Token
+            var token = TokenService.GenerateToken(usuario);
+
+            var usuarioLogin = new UsuarioLoginDto(usuario, token);
+
+            return new ComandoResultado(true, "Efetuado com sucesso.", usuarioLogin);
+        }
+
         public async Task<IComandoResultado> RemoverUsuarioAsync(UsuarioDto usuarioDto)
         {
             var usuario = await UsuarioNegocio.ObterUsuarioPorIdAsync(usuarioDto.Id);
@@ -78,5 +99,6 @@ namespace AplicacaoService.Contextos.Usuarios
 
             return new ComandoResultado(true, "Efetuado com sucesso.");
         }
+
     }
 }

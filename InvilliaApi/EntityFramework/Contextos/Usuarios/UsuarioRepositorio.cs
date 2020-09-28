@@ -17,6 +17,14 @@ namespace EntityFramework.Contextos.Usuarios
         public UsuarioRepositorio(ContextoBase contexto)
             => this.contexto = contexto;
 
+        public async Task<Usuario> BuscaPorEmailESenhaAsync(string email, string senha)
+        {
+            var usuario = await contexto.Usuarios
+                .FirstOrDefaultAsync(u => u.Email == email
+                                    && u.Senha == senha);
+
+            return usuario;
+        }
 
         public async Task<List<Usuario>> ListarTodosOsUsuariosAsync()
         {
@@ -36,5 +44,7 @@ namespace EntityFramework.Contextos.Usuarios
 
             return usuario;
         }
+
+
     }
 }

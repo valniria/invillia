@@ -1,10 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "cu7QdlhNHc/7XIOppoK1jyoAKa0wfagHIritEsYUL2nS8b7Sc25sF5+42XDs52WOIowi4wZTIzrLRSPzf/Dy3w==",
+  "dgSpecHash": "7MWeXI8FAoF9hqe17PdV0V3qAHfZbATIakCx4nNzLmAyt6eoRd/n4EtXlq9xg94Muoy9UE4jZUIWiHLLeHsufQ==",
   "success": true,
   "projectFilePath": "C:\\Valniria\\Repositorio\\invillia\\InvilliaApi\\AplicacaoService\\AplicacaoService.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\valniria.bandeira\\.nuget\\packages\\flunt\\1.0.5\\flunt.1.0.5.nupkg.sha512"
+    "C:\\Users\\valniria.bandeira\\.nuget\\packages\\flunt\\1.0.5\\flunt.1.0.5.nupkg.sha512",
+    "C:\\Users\\valniria.bandeira\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\valniria.bandeira\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.7.1\\microsoft.identitymodel.jsonwebtokens.6.7.1.nupkg.sha512",
+    "C:\\Users\\valniria.bandeira\\.nuget\\packages\\microsoft.identitymodel.logging\\6.7.1\\microsoft.identitymodel.logging.6.7.1.nupkg.sha512",
+    "C:\\Users\\valniria.bandeira\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.7.1\\microsoft.identitymodel.tokens.6.7.1.nupkg.sha512",
+    "C:\\Users\\valniria.bandeira\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.7.1\\system.identitymodel.tokens.jwt.6.7.1.nupkg.sha512",
+    "C:\\Users\\valniria.bandeira\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }
